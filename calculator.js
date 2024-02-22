@@ -37,6 +37,12 @@ function onClick(event) {
     case "=":
       calculate();
       break;
+    case "+":
+    case "-":
+    case "*":
+    case "/":
+        updateOperand(event.target.textContent);
+        break;
     default:
         addToEquation(event.target.textContent);
   }
@@ -50,14 +56,22 @@ function calculate() {
   alert("calculate");
 }
 
-function addToEquation(input) {
-    if (isOperand(input)){
-        alert(`clicked an operand`);
-    } else {
-        alert("clicked a number");
+function updateOperand(operand) {
+    if (equation.leftNum !== "" && equation.operand === "") {
+        equation.operand = operand;
+        alert(buildEquation());
     }
 }
 
-function isOperand(input){
-    return ["+", "-", "*", "/"].includes(input);
+function addToEquation(number) {
+    if (equation.operand === "") {
+        equation.leftNum += number;
+    } else {
+       equation.rightNum += number;
+    }
+    alert(buildEquation());
+}
+
+function buildEquation(){
+    return `${equation.leftNum} ${equation.operand} ${equation.rightNum}`;
 }
