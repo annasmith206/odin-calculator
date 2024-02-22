@@ -1,10 +1,19 @@
 initializeButtonEvents();
 
-function initializeButtonEvents(){
-    const buttons = Array.from(document.querySelectorAll("button"));
-    for (let button of buttons) {
-        button.addEventListener("click", onClick);
-    }
+equation = {
+    leftNum: "",
+    rightNum: "",
+    operand: "",
+}
+
+operand = "";
+rightNum = "";
+
+function initializeButtonEvents() {
+  const buttons = Array.from(document.querySelectorAll("button"));
+  for (let button of buttons) {
+    button.addEventListener("click", onClick);
+  }
 }
 
 function operate(num1, num2, operator) {
@@ -21,5 +30,26 @@ function operate(num1, num2, operator) {
 }
 
 function onClick(event) {
-    alert(`clicked ${event.target.textContent}`)
+  switch (event.target.textContent) {
+    case "C":
+      clearScreen();
+      break;
+    case "=":
+      calculate();
+      break;
+    default:
+        addToEquation(event.target.textContent);
+  }
+}
+
+function clearScreen() {
+  alert("clear screen");
+}
+
+function calculate() {
+  alert("calculate");
+}
+
+function addToEquation(input) {
+    alert(`add ${input} to equation`);
 }
