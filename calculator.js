@@ -59,7 +59,7 @@ function calculate() {
 function updateOperand(operand) {
     if (equation.leftNum !== "" && equation.operand === "") {
         equation.operand = operand;
-        alert(buildEquation());
+        updateScreen(buildEquation());
     }
 }
 
@@ -69,7 +69,12 @@ function addToEquation(number) {
     } else {
        equation.rightNum += number;
     }
-    alert(buildEquation());
+    updateScreen(buildEquation());
+}
+
+function updateScreen(newContent){
+    const screen = document.querySelector(".screen");
+    screen.textContent = newContent;
 }
 
 function buildEquation(){
