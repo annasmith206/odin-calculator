@@ -51,5 +51,13 @@ function calculate() {
 }
 
 function addToEquation(input) {
-    alert(`add ${input} to equation`);
+    if (isOperand(input)){
+        alert(`clicked an operand`);
+    } else {
+        alert("clicked a number");
+    }
+}
+
+function isOperand(input){
+    return ["+", "-", "*", "/"].includes(input);
 }
