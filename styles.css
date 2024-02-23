@@ -1,37 +1,88 @@
+@font-face {
+    font-family: digital;
+    src: url(fonts/digital-7.ttf);
+}
+
 .calculator-body {
-    height: calc(100vh * .75);
+    height: calc(100vh * .80);
     width: calc(100vh * .55);
     background-color: gray;
     margin: auto;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 20px;
+    padding: 30px 20px 20px 20px ;
+    gap: 4%;
     align-items: stretch;
+    border-radius: 30px 30px 10px 10px;
+    border-top: solid rgb(67, 67, 67) 10px;
+}
+
+.screen-container {
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    background-color: rgb(4, 18, 59);
+    padding: 0px 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-color: white;
+    border-style: inset;
+    border-width: 10px;
+
 }
 
 .screen {
-    flex: none;
-    flex: 1
+    font-family: digital;
+    font-size: calc(100vh/10);
+    color: rgb(0, 255, 21)
 }
 
 .button-container {
-    flex: 3;
+    flex: 5;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4%;
+    border: 4px inset;
+    padding: 2%;
+    border-radius: 0px 0px 20px 20px;
+    background-color: rgb(106, 106, 106);
+}
+
+.operand {
+    background-color: orange;
+}
+
+.special-button {
+    background-color: rgb(0, 183, 255);
 }
 
 .button-row {
     flex: 1;
     display: flex;
-    gap: 10px;
+    gap: 4%;
 }
 
 button {
     flex: 1;
+    border-radius: 10px;
+    border: 3px outset;
 }
 
-div {
-    border: 1px solid black;
+.operand:hover {
+    background-color: rgb(238, 147, 0);
 }
+
+.special-button:hover {
+    background-color: rgb(0, 159, 222);
+}
+
+button:hover {
+    background-color: rgb(213, 213, 213);
+}
+
+button:active {
+    border: 3px inset;
+}
+
+
