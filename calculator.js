@@ -52,7 +52,7 @@ function clearScreen() {
 
 function calculate() {
     if (isValidEquation()){
-        leftNum = operate(parseInt(leftNum), parseInt(rightNum), operand);
+        leftNum = operate(parseFloat(leftNum), parseFloat(rightNum), operand);
         rightNum = "";
         operand = "";
         updateScreen(leftNum);
