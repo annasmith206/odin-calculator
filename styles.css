@@ -10,10 +10,10 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    padding: 30px 20px 20px 20px ;
+    padding: 30px 25px 30px 25px;
     gap: 4%;
     align-items: stretch;
-    border-radius: 30px 30px 10px 10px;
+    border-radius: 30px;
     border-top: solid rgb(67, 67, 67) 10px;
 }
 
@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: flex-end;
     display: flex;
-    background-color: rgb(4, 18, 59);
+    background-color: rgb(1 38 52);
     padding: 0px 10px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -30,17 +30,16 @@
     border-style: inset;
     border-width: 10px;
     text-overflow: clip;
-
 }
 
 .screen {
-    font-family: digital;
     font-size: calc(100vh/10);
     color: rgb(0, 255, 21);
     max-width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden; 
+    font-family: digital;
 }
 
 .button-container {
@@ -70,8 +69,10 @@
 
 button {
     flex: 1;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 3px outset;
+    font-size: calc(100vh/16);
+    color: rgba(0, 0, 0, 0.81);
 }
 
 .operand:hover {

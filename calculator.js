@@ -17,7 +17,7 @@ function operate(num1, num2, operator) {
       return num1 + num2;
     case "-":
       return num1 - num2;
-    case "*":
+    case "x":
       return num1 * num2;
     case "/":
       if (num2 === 0){
@@ -38,7 +38,7 @@ function onClick(event) {
       break;
     case "+":
     case "-":
-    case "*":
+    case "x":
     case "/":
         updateOperand(event.target.textContent);
         break;
