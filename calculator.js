@@ -44,8 +44,10 @@ function onClick(event) {
 }
 
 function clearScreen() {
-  alert("clear screen");
-
+  updateScreen("");
+  leftNum = "";
+  rightNum = "";
+  operand = "";
 }
 
 function calculate() {
