@@ -1,13 +1,8 @@
 initializeButtonEvents();
 
-equation = {
-    leftNum: "",
-    rightNum: "",
-    operand: "",
-}
-
-operand = "";
-rightNum = "";
+let leftNum = "";
+let rightNum = "";
+let operand = "";
 
 function initializeButtonEvents() {
   const buttons = Array.from(document.querySelectorAll("button"));
@@ -50,24 +45,34 @@ function onClick(event) {
 
 function clearScreen() {
   alert("clear screen");
+
 }
 
 function calculate() {
-  alert("calculate");
+    if (isValidEquation()){
+        leftNum = operate(parseInt(leftNum), parseInt(rightNum), operand);
+        rightNum = "";
+        operand = "";
+        updateScreen(leftNum);
+    }
 }
 
-function updateOperand(operand) {
-    if (equation.leftNum !== "" && equation.operand === "") {
-        equation.operand = operand;
+function isValidEquation(){
+    return leftNum !== "" && rightNum !== "" && operand !== "";
+}
+
+function updateOperand(newOperand) {
+    if (leftNum !== "" && operand === "") {
+        operand = newOperand;
         updateScreen(buildEquation());
     }
 }
 
 function addToEquation(number) {
-    if (equation.operand === "") {
-        equation.leftNum += number;
+    if (operand === "") {
+        leftNum += number;
     } else {
-       equation.rightNum += number;
+       rightNum += number;
     }
     updateScreen(buildEquation());
 }
@@ -78,5 +83,5 @@ function updateScreen(newContent){
 }
 
 function buildEquation(){
-    return `${equation.leftNum} ${equation.operand} ${equation.rightNum}`;
+    return `${leftNum} ${operand} ${rightNum}`;
 }
