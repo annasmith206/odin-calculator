@@ -20,7 +20,11 @@ function operate(num1, num2, operator) {
     case "*":
       return num1 * num2;
     case "/":
-      return num1 / num2;
+      if (num2 === 0){
+        return "ERROR"
+      } else {
+        return num1 / num2;
+      }
   }
 }
 
@@ -72,7 +76,11 @@ function updateOperand(newOperand) {
 
 function addToEquation(number) {
     if (operand === "") {
-        leftNum += number;
+        if (leftNum === "ERROR") {
+          leftNum = number;
+        } else {
+          leftNum += number;
+        }
     } else {
        rightNum += number;
     }
