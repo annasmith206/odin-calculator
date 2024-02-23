@@ -29,13 +29,18 @@
     border-color: white;
     border-style: inset;
     border-width: 10px;
+    text-overflow: clip;
 
 }
 
 .screen {
     font-family: digital;
     font-size: calc(100vh/10);
-    color: rgb(0, 255, 21)
+    color: rgb(0, 255, 21);
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
 }
 
 .button-container {
